@@ -1,4 +1,5 @@
-import { extendTheme, ThemeConfig } from '@chakra-ui/react';
+/* eslint-disable react-hooks/rules-of-hooks */
+import { extendTheme, ThemeConfig, useColorModeValue } from '@chakra-ui/react';
 
 const config: ThemeConfig = {
   initialColorMode: 'dark',
@@ -20,6 +21,28 @@ const theme = extendTheme({
       900: '#111111',
     },
   },
+  components: {
+    Modal: {
+      baseStyle: () => ({
+        dialog: {
+          bg: useColorModeValue('white', 'gray.800'),
+          border: '1px solid',
+          borderColor: useColorModeValue('gray.200', 'gray.700')
+        }
+      })
+    },
+    Button: {
+      variants: {
+        themeAware: () => ({
+          bg: useColorModeValue('blue.600', 'blue.200'),
+          color: useColorModeValue('white', 'gray.900'),
+          _hover: {
+            bg: useColorModeValue('blue.700', 'blue.300')
+          }
+        })
+      }
+    }
+  }
 });
 
 export default theme;

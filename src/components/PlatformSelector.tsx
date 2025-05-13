@@ -19,7 +19,7 @@ const PlatformSelector = ({ onSelectPlatform, selectedPlatform }: IPlatformSelec
         {selectedPlatform?.name || 'Platform'}
       </MenuButton>
       <MenuList>
-        {data.map(platform => (
+        {data.filter((item) => item.name !== 'PlayStation').map(platform => (
           <MenuItem onClick={() => onSelectPlatform(platform)} key={platform.id}>{platform.name}</MenuItem>
         ))}
       </MenuList>

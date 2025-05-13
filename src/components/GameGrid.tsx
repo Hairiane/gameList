@@ -1,7 +1,7 @@
 import { SimpleGrid, Text } from '@chakra-ui/react';
-import useGames from '../hooks/useGames.ts';
 import { GameCard, GameCardContainer, GameCardSkeleton } from './index.ts';
 import { GameQuery } from '../App.tsx';
+import { useGames } from '../hooks/useGames.ts';
 
 interface IGameGrid {
   gameQuery: GameQuery;
@@ -25,11 +25,14 @@ const GameGrid = ({ gameQuery }: IGameGrid) => {
           <GameCardSkeleton />
         </GameCardContainer>
       ))}
-      {data.map(game => (
-        <GameCardContainer key={game.id}>
-          <GameCard game={game} />
-        </GameCardContainer>
-      ))}
+      {data.map(game => {
+        if (game.tags.find((tag) => tag.name === 'Нагота')?.name) return
+        return (
+          <GameCardContainer key={game.id}>
+            <GameCard game={game} />
+          </GameCardContainer>
+        )
+      })}
     </SimpleGrid>
   );
 };
