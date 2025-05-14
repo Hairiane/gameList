@@ -79,7 +79,6 @@ const ModalInfoCard: React.FC<IModalInfoCard> = ({ isOpen, onClose, game }) => {
 
         <ModalBody p={{ base: 2, md: 6 }} bg={useColorModeValue('gray.50', 'gray.800')}>
           <Grid templateColumns={{ base: '1fr', md: '300px 1fr' }} gap={6}>
-            {/* Left Column - Media */}
             <GridItem>
               <Box
                 borderRadius="xl"
@@ -113,7 +112,6 @@ const ModalInfoCard: React.FC<IModalInfoCard> = ({ isOpen, onClose, game }) => {
               )}
             </GridItem>
 
-            {/* Right Column - Content */}
             <GridItem>
               <Tabs variant="soft-rounded" colorScheme="blue">
                 <TabList mb={6} flexWrap="wrap">
@@ -123,7 +121,6 @@ const ModalInfoCard: React.FC<IModalInfoCard> = ({ isOpen, onClose, game }) => {
                 </TabList>
 
                 <TabPanels>
-                  {/* Основная информация */}
                   <TabPanel p={0}>
                     <SimpleGrid columns={{ base: 1, md: 2 }} spacing={4} mb={6}>
                       <Stat p={3} bg={cardBg} borderRadius="lg" boxShadow="sm">
@@ -200,7 +197,6 @@ const ModalInfoCard: React.FC<IModalInfoCard> = ({ isOpen, onClose, game }) => {
                     </SimpleGrid>
                   </TabPanel>
 
-                  {/* Требования */}
                   <TabPanel p={0}>
                     <Box mb={6}>
                       <Text fontSize="xl" fontWeight="bold" mb={4} color={accentColor}>
@@ -249,7 +245,6 @@ const ModalInfoCard: React.FC<IModalInfoCard> = ({ isOpen, onClose, game }) => {
                     </Box>
                   </TabPanel>
 
-                  {/* Сообщество */}
                   <TabPanel p={0}>
                     <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6} mb={6}>
                       <Box
@@ -351,7 +346,6 @@ const ModalInfoCard: React.FC<IModalInfoCard> = ({ isOpen, onClose, game }) => {
                 </TabPanels>
               </Tabs>
 
-              {/* Дополнительная информация */}
               <SimpleGrid columns={{ base: 1, md: 2 }} spacing={4} mt={6}>
                 {data?.stores && data?.stores?.length > 0 && (
                   <Box

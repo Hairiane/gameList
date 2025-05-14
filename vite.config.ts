@@ -7,6 +7,7 @@ export default defineConfig(({mode}) => {
   console.log(env);
 
   return {
+    base: 'https://github.com/hairiane/gameList',
     plugins: [react()],
     define: {
       'process.env.APIKEY_RAWG': JSON.stringify(env.APIKEY_RAWG)
